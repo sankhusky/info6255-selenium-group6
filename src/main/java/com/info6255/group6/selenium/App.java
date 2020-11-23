@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.info6255.group6.selenium.testscenarios.Scenario3BrowseClasses;
 
 /**
- * Hello world!
+ * Group 6 Selenium Testing Assignment. Main Driver class for testing the scenarios
  *
  */
 public class App {
