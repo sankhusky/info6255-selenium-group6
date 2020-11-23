@@ -11,5 +11,5 @@ Prerequisites:
 Instructions:
 - Import the project in Eclipse
 - Download and keep the chromedriver.exe as mentioned above
-- Rename `config.properties.repo` to `config.properties` and set all the values and credentials
+- Rename `config.properties.dummy` to `config.properties` and set all the values and credentials
 - Run the project
