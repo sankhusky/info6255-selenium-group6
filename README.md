@@ -7,3 +7,9 @@ Prerequisites:
 - Chrome driver: 
 	- Download from : [This index](http://chromedriver.storage.googleapis.com/index.html)  
 	- place the chromedriver.exe in the project's root folder
+	
+Instructions:
+- Import the project in Eclipse
+- Download and keep the chromedriver.exe as mentioned above
+- Rename `config.properties.repo` to `config.properties` and set all the values and credentials
+- Run the project
