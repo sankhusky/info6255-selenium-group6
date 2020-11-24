@@ -52,7 +52,7 @@ public class App {
 
 			long scriptEndTime = System.currentTimeMillis();
 
-			logger.log(Level.INFO, "Script took " + (scriptEndTime - scriptStartTime) / 100 + " seconds to complete");
+			logger.log(Level.INFO, "Script took " + (scriptEndTime - scriptStartTime) / 1000 + " seconds to complete");
 //			driver.close();
 //			---------------------------------------------------------------------
 		} catch (IOException ex) {

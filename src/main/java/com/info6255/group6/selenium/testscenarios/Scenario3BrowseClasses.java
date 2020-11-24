@@ -25,19 +25,22 @@ public class Scenario3BrowseClasses {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@aria-label=\"Services & Links \"]"))).click();
 //		String winHandleBefore = driver.getWindowHandle(); //--Store current window handle if needed to return here
 
+		long startRegistrationTimer = System.currentTimeMillis();
 //		 Perform the click operation that opens new window
 		driver.findElement(By.xpath("//a[@data-text=\"Course Registration (NEW)\"]")).click();
 		logger.log(Level.INFO, "Clicked course registration, waiting for new window");
 
-//		 Switch to new window opened
+//		 Switch to new window
 		for (String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
 
 //		Click on Browse for classes
+		logger.log(Level.INFO, "switched to new window, waiting for page to load.........");
 		WebElement browseClassLink = wait
 				.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("classSearchLink"))));
-		logger.log(Level.INFO, "switched to new window, page loaded, let's click");
+		long endRegistrationTimer = System.currentTimeMillis();
+		logger.log(Level.INFO, "Registration window loaded, time taken=" + (endRegistrationTimer-startRegistrationTimer) + "milliseconds");
 		browseClassLink.click();
 
 //		Select a Term - Spring 2021 semester 
