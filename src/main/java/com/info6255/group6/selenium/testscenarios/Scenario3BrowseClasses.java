@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.info6255.group6.selenium.Utils;
 /**
  * Browse classes for spring 21 sem
@@ -21,7 +23,7 @@ public class Scenario3BrowseClasses {
 //	TODO Add code for screenshot
 	static Logger logger = Logger.getLogger(Scenario3BrowseClasses.class.getName());
 
-	public static void runScenario(WebDriver driver) {
+	public static void runScenario(WebDriver driver, ExtentTest test) {
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 
 		Utils.takeScreenShot(driver, "myneu_homepage"); 
@@ -95,7 +97,7 @@ public class Scenario3BrowseClasses {
 		 * jsEx.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		 * logger.log(Level.INFO,"Finished Scrolling to bottom");
 		 */
-
+		test.log(Status.INFO, "Expected: Browse Courses, Actual: Browsed courses successfully");
 //		driver.quit();
 	}
 

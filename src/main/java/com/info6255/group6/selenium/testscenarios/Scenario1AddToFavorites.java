@@ -9,10 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class Scenario1AddToFavorites {
 	static Logger logger = Logger.getLogger(Scenario1AddToFavorites.class.getName());
 
-	public static void runScenario(WebDriver driver) {
+	public static void runScenario(WebDriver driver, ExtentTest test) {
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		WebElement e = wait.until(ExpectedConditions
@@ -25,6 +28,7 @@ public class Scenario1AddToFavorites {
 //				));
 //		w.click();
 //		driver.quit();
+		test.log(Status.INFO, "Expected: Add Course Registration to Favorites, Actual: Added Course Registration to Favorites");
 	}
 
 }

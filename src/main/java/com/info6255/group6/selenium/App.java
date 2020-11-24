@@ -4,20 +4,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeTest;
 
-import com.info6255.group6.selenium.testscenarios.Scenario1AddToFavorites;
-import com.info6255.group6.selenium.testscenarios.Scenario3BrowseClasses;
-import com.info6255.group6.selenium.testscenarios.Scenario5CoursePlan;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 /**
  * Group 6 Selenium Testing Assignment. Main Driver class for testing the
@@ -28,73 +24,65 @@ public class App {
 
 	static Logger logger = Logger.getLogger(App.class.getName());
 
-	
 	public static void main(String[] args) {
 		try (InputStream input = new FileInputStream("./config.properties")) {
 
-//			-----------------------SETUP--------------------------------------
-			long scriptStartTime = System.currentTimeMillis();
-			Properties prop = new Properties();
-			prop.load(input);
-
-//			setting the driver executable
-			System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
-
-//			-------------------------------------------------------------------
-
-//			--------------------PERFORM TESTS----------------------------------
-			/**
-			 * Scenario 1
-			 */
-			// Initiating your chromedriver
-			WebDriver driver = new ChromeDriver();
-
-			driver.manage().window().maximize();
-//			Login
-			performLogin(driver, prop);
-
-			Scenario1AddToFavorites.runScenario(driver);
-
-			/**
-			 * Scenario 3
-			 */
-			// Initiating your chromedriver
-			driver = new ChromeDriver();
-
-			driver.manage().window().maximize();
-
-//			login
-			performLogin(driver, prop);
-//			Browse Classes
-			Scenario3BrowseClasses.runScenario(driver);
-
-			/**
-			 * Scenario 5
-			 */
-			// Initiating your chromedriver
-			driver = new ChromeDriver();
-
-			driver.manage().window().maximize();
-
-//			login
-			performLogin(driver, prop);
-
-//			Create a course plan
-			Scenario5CoursePlan.runScenario(driver);
-
-			long scriptEndTime = System.currentTimeMillis();
-
-			logger.log(Level.INFO, "Script took " + (scriptEndTime - scriptStartTime) / 1000 + " seconds to complete");
-//			driver.close();
-//			---------------------------------------------------------------------
+			/*
+			 * // -----------------------SETUP-------------------------------------- long
+			 * scriptStartTime = System.currentTimeMillis(); Properties prop = new
+			 * Properties(); prop.load(input);
+			 * 
+			 * // setting the driver executable
+			 * System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+			 * 
+			 * // -------------------------------------------------------------------
+			 * 
+			 * // --------------------PERFORM TESTS----------------------------------
+			 *//**
+				 * Scenario 1
+				 */
+			/*
+			 * // Initiating your chromedriver WebDriver driver = new ChromeDriver();
+			 * 
+			 * driver.manage().window().maximize(); // Login performLogin(driver, prop);
+			 * 
+			 * Scenario1AddToFavorites.runScenario(driver);
+			 * 
+			 *//**
+				 * Scenario 3
+				 */
+			/*
+			 * // Initiating your chromedriver driver = new ChromeDriver();
+			 * 
+			 * driver.manage().window().maximize();
+			 * 
+			 * // login performLogin(driver, prop, test); // Browse Classes
+			 * Scenario3BrowseClasses.runScenario(driver);
+			 * 
+			 *//**
+				 * Scenario 5
+				 *//*
+					 * // Initiating your chromedriver driver = new ChromeDriver();
+					 * 
+					 * driver.manage().window().maximize();
+					 * 
+					 * // login performLogin(driver, prop);
+					 * 
+					 * // Create a course plan Scenario5CoursePlan.runScenario(driver);
+					 * 
+					 * long scriptEndTime = System.currentTimeMillis();
+					 * 
+					 * logger.log(Level.INFO, "Script took " + (scriptEndTime - scriptStartTime) /
+					 * 1000 + " seconds to complete"); // driver.close();
+					 */
+			// ---------------------------------------------------------------------
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
 
 	}
 
-	
-	public static void performLogin(WebDriver driver, Properties prop) {
+	public static void performLogin(WebDriver driver, Properties prop, ExtentTest test) {
 		driver.get("https://my.northeastern.edu/");
 		Utils.takeScreenShot(driver, "myneu_main_page");
 		driver.findElement(By.linkText("Go To Login")).click();
@@ -118,6 +106,7 @@ public class App {
 		Utils.takeScreenShot(driver, "login_duo");
 		driver.findElement(By.xpath(" //*[@id=\"auth_methods\"]/fieldset/div[1]/button")).click();
 		driver.switchTo().defaultContent();
+		test.log(Status.INFO, "Expected: Login with 2FA, Actual: Logged in with 2FA");
 
 	}
 }

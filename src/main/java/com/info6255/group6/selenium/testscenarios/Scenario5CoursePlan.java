@@ -11,13 +11,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 //TODO Add comments
 //TODO Call Utils.takeScreenShot(driver, "filename") wherever necessary for before + after actions
 public class Scenario5CoursePlan {
 //    @Test
 	static Logger logger = Logger.getLogger(Scenario5CoursePlan.class.getName());
 
-	public static void runScenario(WebDriver driver) {
+	public static void runScenario(WebDriver driver, ExtentTest test) {
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.linkText("Services & Links"))))
@@ -77,5 +80,7 @@ public class Scenario5CoursePlan {
 //				.elementToBeClickable()).click();
 //		logger.log(Level.INFO, "Plan was displayed");
 //		 driver.quit();
+		
+		test.log(Status.INFO, "Expected: Create a Course plan, Actual: Course plan - plan1 created successfully");
 	}
 }
