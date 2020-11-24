@@ -14,10 +14,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.info6255.group6.selenium.testscenarios.Scenario1AddToFavorites;
 import com.info6255.group6.selenium.testscenarios.Scenario3BrowseClasses;
+import com.info6255.group6.selenium.testscenarios.Scenario5CoursePlan;
 
 /**
- * Group 6 Selenium Testing Assignment. Main Driver class for testing the scenarios
+ * Group 6 Selenium Testing Assignment. Main Driver class for testing the
+ * scenarios
  *
  */
 public class App {
@@ -35,20 +38,47 @@ public class App {
 //			setting the driver executable
 			System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 
+//			-------------------------------------------------------------------
+
+//			--------------------PERFORM TESTS----------------------------------
+			/**
+			 * Scenario 1
+			 */
 			// Initiating your chromedriver
 			WebDriver driver = new ChromeDriver();
 
 			driver.manage().window().maximize();
-//			-------------------------------------------------------------------
-
-//			--------------------PERFORM TESTS----------------------------------
 //			Login
 			performLogin(driver, prop);
 
+			Scenario1AddToFavorites.runScenario(driver);
+
+			/**
+			 * Scenario 3
+			 */
+			// Initiating your chromedriver
+			driver = new ChromeDriver();
+
+			driver.manage().window().maximize();
+
+//			login
+			performLogin(driver, prop);
 //			Browse Classes
 			Scenario3BrowseClasses.runScenario(driver);
 
-//			TODO Add other scenarios
+			/**
+			 * Scenario 5
+			 */
+			// Initiating your chromedriver
+			driver = new ChromeDriver();
+
+			driver.manage().window().maximize();
+
+//			login
+			performLogin(driver, prop);
+
+//			Create a course plan
+			Scenario5CoursePlan.runScenario(driver);
 
 			long scriptEndTime = System.currentTimeMillis();
 
@@ -63,6 +93,7 @@ public class App {
 
 	private static void performLogin(WebDriver driver, Properties prop) {
 		driver.get("https://my.northeastern.edu/");
+		Utils.takeScreenShot(driver, "myneu_main_page");
 		driver.findElement(By.linkText("Go To Login")).click();
 
 		WebDriverWait wait = new WebDriverWait(driver, 100);
@@ -74,12 +105,14 @@ public class App {
 
 		password.sendKeys(prop.getProperty("NEU_PASSWORD"));
 
+		Utils.takeScreenShot(driver, "myneu_login_page_credentials");
 		driver.findElement(By.xpath("/html/body/section/div/div[1]/div/form/div[3]/button")).click();
 
 		// code to switch to iframe for duo two factor notification
 
 		driver.switchTo().frame("duo_iframe");
 
+		Utils.takeScreenShot(driver, "login_duo");
 		driver.findElement(By.xpath(" //*[@id=\"auth_methods\"]/fieldset/div[1]/button")).click();
 		driver.switchTo().defaultContent();
 
