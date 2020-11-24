@@ -24,7 +24,7 @@ public class Scenario1AddToFavorites {
 //		WebElement w = wait.until(ExpectedConditions.elementToBeClickable(
 //				));
 //		w.click();
-		driver.quit();
+//		driver.quit();
 	}
 
 }

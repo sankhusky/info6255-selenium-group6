@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeTest;
 
 import com.info6255.group6.selenium.testscenarios.Scenario1AddToFavorites;
 import com.info6255.group6.selenium.testscenarios.Scenario3BrowseClasses;
@@ -27,6 +28,7 @@ public class App {
 
 	static Logger logger = Logger.getLogger(App.class.getName());
 
+	
 	public static void main(String[] args) {
 		try (InputStream input = new FileInputStream("./config.properties")) {
 
@@ -91,7 +93,8 @@ public class App {
 
 	}
 
-	private static void performLogin(WebDriver driver, Properties prop) {
+	
+	public static void performLogin(WebDriver driver, Properties prop) {
 		driver.get("https://my.northeastern.edu/");
 		Utils.takeScreenShot(driver, "myneu_main_page");
 		driver.findElement(By.linkText("Go To Login")).click();

@@ -96,7 +96,7 @@ public class Scenario3BrowseClasses {
 		 * logger.log(Level.INFO,"Finished Scrolling to bottom");
 		 */
 
-		driver.quit();
+//		driver.quit();
 	}
 
 }
