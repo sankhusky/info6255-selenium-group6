@@ -32,3 +32,17 @@ buildNumber.properties
 .mvn/timing.properties
 .vscode/
 .mvn/wrapper/maven-wrapper.jar
+
+*.exe
+bin/
+*.properties
+# Intellij
+.idea/
+*.iml
+*.iws
+ 
+# Mac
+.DS_Store
+
+/screenshot
+
