@@ -32,6 +32,7 @@ buildNumber.properties
 .mvn/timing.properties
 .vscode/
 .mvn/wrapper/maven-wrapper.jar
+
 *.exe
 bin/
 *.properties
@@ -44,3 +45,4 @@ bin/
 .DS_Store
 
 /screenshot
+
