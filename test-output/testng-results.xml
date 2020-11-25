@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="99218" started-at="2020-11-24T17:17:53 EST" finished-at="2020-11-24T17:19:32 EST">
+  <suite name="Default suite" duration-ms="164682" started-at="2020-11-24T19:37:37 EST" finished-at="2020-11-24T19:40:22 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="99218" started-at="2020-11-24T17:17:53 EST" finished-at="2020-11-24T17:19:32 EST">
+    <test name="Default test" duration-ms="164682" started-at="2020-11-24T19:37:37 EST" finished-at="2020-11-24T19:40:22 EST">
       <class name="com.info6255.group6.selenium.SeleniumTests">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="7084" started-at="2020-11-24T17:17:53 EST" finished-at="2020-11-24T17:18:00 EST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="5817" started-at="2020-11-24T19:37:37 EST" finished-at="2020-11-24T19:37:43 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeClass" is-config="true" duration-ms="312" started-at="2020-11-24T17:18:00 EST" finished-at="2020-11-24T17:18:01 EST">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeClass" is-config="true" duration-ms="259" started-at="2020-11-24T19:37:43 EST" finished-at="2020-11-24T19:37:43 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="3" started-at="2020-11-24T17:18:01 EST" finished-at="2020-11-24T17:18:01 EST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="1" started-at="2020-11-24T19:37:43 EST" finished-at="2020-11-24T19:37:43 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="scenario1Test()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="scenario1Test" duration-ms="24698" started-at="2020-11-24T17:18:01 EST" finished-at="2020-11-24T17:18:25 EST">
+        <test-method status="PASS" signature="scenario1Test()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="scenario1Test" duration-ms="20200" started-at="2020-11-24T19:37:43 EST" finished-at="2020-11-24T19:38:03 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario1Test -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="918" started-at="2020-11-24T17:18:25 EST" finished-at="2020-11-24T17:18:26 EST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="804" started-at="2020-11-24T19:38:03 EST" finished-at="2020-11-24T19:38:04 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="5797" started-at="2020-11-24T17:18:26 EST" finished-at="2020-11-24T17:18:32 EST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="5322" started-at="2020-11-24T19:38:04 EST" finished-at="2020-11-24T19:38:09 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="scenario3Test()[pri:1, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="scenario3Test" duration-ms="58554" started-at="2020-11-24T17:18:32 EST" finished-at="2020-11-24T17:19:31 EST">
+        <test-method status="PASS" signature="scenario3Test()[pri:1, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="scenario3Test" duration-ms="49613" started-at="2020-11-24T19:38:09 EST" finished-at="2020-11-24T19:38:59 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario3Test -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="893" started-at="2020-11-24T17:19:31 EST" finished-at="2020-11-24T17:19:32 EST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="826" started-at="2020-11-24T19:38:59 EST" finished-at="2020-11-24T19:39:00 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterClass" is-config="true" duration-ms="863" started-at="2020-11-24T17:19:32 EST" finished-at="2020-11-24T17:19:32 EST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="beforeTest" is-config="true" duration-ms="5298" started-at="2020-11-24T19:39:00 EST" finished-at="2020-11-24T19:39:05 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="scenario5Test()[pri:2, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="scenario5Test" duration-ms="75346" started-at="2020-11-24T19:39:05 EST" finished-at="2020-11-24T19:40:20 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario5Test -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="872" started-at="2020-11-24T19:40:20 EST" finished-at="2020-11-24T19:40:21 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterClass" is-config="true" duration-ms="273" started-at="2020-11-24T19:40:21 EST" finished-at="2020-11-24T19:40:22 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="1" started-at="2020-11-24T17:19:32 EST" finished-at="2020-11-24T17:19:32 EST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.info6255.group6.selenium.SeleniumTests@1786dec2]" name="afterTest" is-config="true" duration-ms="1" started-at="2020-11-24T19:40:22 EST" finished-at="2020-11-24T19:40:22 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

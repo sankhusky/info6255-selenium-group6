@@ -26,13 +26,13 @@ public class Scenario3BrowseClasses {
 	public static void runScenario(WebDriver driver, ExtentTest test) {
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 
-		Utils.takeScreenShot(driver, "myneu_homepage"); 
+		Utils.takeScreenShot(driver, "scenario3_myneu_homepage_before"); 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@aria-label=\"Services & Links \"]"))).click();
 //		String winHandleBefore = driver.getWindowHandle(); //--Store current window handle if needed to return here
 
 		long startRegistrationTimer = System.currentTimeMillis();
 //		 Perform the click operation that opens new window
-		Utils.takeScreenShot(driver, "services_and_links");
+		Utils.takeScreenShot(driver, "scenario3_services_and_links_after");
 		driver.findElement(By.xpath("//a[@data-text=\"Course Registration (NEW)\"]")).click();
 		logger.log(Level.INFO, "Clicked course registration, waiting for new window");
 
@@ -46,7 +46,7 @@ public class Scenario3BrowseClasses {
 		WebElement browseClassLink = wait
 				.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("classSearchLink"))));
 		long endRegistrationTimer = System.currentTimeMillis();
-		Utils.takeScreenShot(driver, "course_registration_home");
+		Utils.takeScreenShot(driver, "scenario3_course_registration_home");
 		logger.log(Level.INFO, "Registration window loaded, time taken= " + (endRegistrationTimer-startRegistrationTimer) + " milliseconds");
 		browseClassLink.click();
 
@@ -55,7 +55,7 @@ public class Scenario3BrowseClasses {
 		WebElement semSearch = driver.findElement(By.id("s2id_autogen1_search"));
 		semSearch.sendKeys("Spring 2021 Semester");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Utils.takeScreenShot(driver, "show_term");
+		Utils.takeScreenShot(driver, "scenario3_show_term");
 		logger.log(Level.INFO, "got sem list");
 
 		// Select the spring 2021 div from the dropdown and click
@@ -63,20 +63,20 @@ public class Scenario3BrowseClasses {
 				.click();
 		logger.log(Level.INFO, "clicked semester");
 
-		Utils.takeScreenShot(driver, "select_term");
+		Utils.takeScreenShot(driver, "scenario3_select_term");
 //		Click Continue button
 		driver.findElement(By.id("term-go")).click();
 //		Click the div containing Subject input to activate it
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("s2id_txt_subject")))).click();
 
-		Utils.takeScreenShot(driver, "select_subject");
+		Utils.takeScreenShot(driver, "scenario3_select_subject_before");
 //		Add text to input and select Information Systems program
 		WebElement subjectInput = driver
 //				.findElement(By.xpath("//input[@id=\"s2id_autogen1\" and @class=\"select2-input\"]"));
 				.findElement(By.xpath("//*[@id=\"s2id_autogen1\"]"));
 		subjectInput.sendKeys("Information Systems");
 		driver.findElement(By.id("INFO")).click();
-		Utils.takeScreenShot(driver, "select_subject_info_systems");
+		Utils.takeScreenShot(driver, "scenario3_select_subject_info_systems_after");
 		driver.findElement(By.id("search-go")).click(); // Select
 		logger.log(Level.INFO, "Selected the subject");
 
@@ -89,7 +89,7 @@ public class Scenario3BrowseClasses {
 
 		long endTimeCourses = System.currentTimeMillis();
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.className("page-size-select"))));
-		Utils.takeScreenShot(driver, "display_courses");
+		Utils.takeScreenShot(driver, "scenario3_display_courses");
 		logger.log(Level.INFO, "It took " + (endTimeCourses - startTimeCourses)
 				+ "milliseconds to get the courses, and select 50 items per page");
 		/*
